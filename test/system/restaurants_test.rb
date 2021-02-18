@@ -15,7 +15,7 @@ class RestaurantsTest < ApplicationSystemTestCase
     click_on "New Restaurant"
 
     fill_in "Name", with: @restaurant.name
-    fill_in "Site", with: @restaurant.site
+    fill_in "Site", with: @restaurant.subdomain
     fill_in "User", with: @restaurant.user_id
     click_on "Create Restaurant"
 
@@ -28,7 +28,7 @@ class RestaurantsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Name", with: @restaurant.name
-    fill_in "Site", with: @restaurant.site
+    fill_in "Site", with: @restaurant.subdomain
     fill_in "User", with: @restaurant.user_id
     click_on "Update Restaurant"
 
