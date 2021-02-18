@@ -21,7 +21,6 @@ class RestaurantsController < ApplicationController
 
   # POST /restaurants or /restaurants.json
   def create
-    byebug
     @restaurant = Restaurant.new(restaurant_params)
 
     respond_to do |format|
