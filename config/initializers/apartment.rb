@@ -29,7 +29,10 @@ Apartment.configure do |config|
   # (must contain all key/values required in database.yml)
   #
   # config.tenant_names = lambda{ Restaurant.pluck :subdomain }
-  config.tenant_names = ['site1', 'site2']
+  # 1=> name+create+seed
+  # 2=> name+create+seed
+  # 3=> name+create mais pas seed
+  config.tenant_names = ['site1', 'site2', 'site3', 'site4']
   # config.tenant_names = {
   #   'tenant1' => {
   #     adapter: 'postgresql',
@@ -103,7 +106,7 @@ Apartment.configure do |config|
   # Specifies whether the database and schema (when using PostgreSQL schemas) will prepend in ActiveRecord log.
   # Uncomment the line below if you want to enable this behavior.
   #
-  # config.active_record_log = true
+  config.active_record_log = true
 end
 
 # Setup a custom Tenant switching middleware. The Proc should return the name of the Tenant that
