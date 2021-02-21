@@ -3,9 +3,11 @@ puts ">> Current Tenant: #{Apartment::Tenant.current}"
 puts ">> Tenants already in: #{Apartment.tenant_names}"
 Restaurant.destroy_all
 User.destroy_all
-# Apartment::Tenant.reset
-["site1", "site2"].each  do |tenant|
-  Apartment::Tenant.create(tenant) unless Apartment.tenant_names.include?(tenant)
+# Apartment::Tenant.reset  => Non, Renvoie sur "public" alors que chaque tenant est seedé
+begin
+  Apartment.tenant_names.each  do |tenant|
+    Apartment::Tenant.create(tenant) # unless Apartment.tenant_names.include?(tenant)
+  end
 end
 
 User.create!(email: 'admin@example.com', password: 'azerty', password_confirmation: 'azerty', admin: true)
